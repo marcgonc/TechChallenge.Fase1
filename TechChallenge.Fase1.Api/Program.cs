@@ -11,7 +11,6 @@ using TechChallenge.Fase1.Api.Middlewares;
 using TechChallenge.Fase1.Api.Repository;
 using TechChallenge.Fase1.Api.Repository.Data;
 using TechChallenge.Fase1.Api.Service;
-using TechChallenge.Fase1.Api.Services;
 
 Batteries.Init();
 

@@ -6,7 +6,7 @@ using TechChallenge.Fase1.Api.Enums;
 using TechChallenge.Fase1.Api.Interfaces;
 using TechChallenge.Fase1.Api.Models;
 
-namespace TechChallenge.Fase1.Api.Services;
+namespace TechChallenge.Fase1.Api.Service;
 
 public class TokenService : ITokenService
 {
@@ -29,7 +29,7 @@ public class TokenService : ITokenService
             var userDb = _usuarioCadastro.Usuario(usuario.Username, usuario.Password);
 
             usuarioExiste = userDb?.Username is not null;
-            usuario.PermissaoSistema = usuarioExiste? userDb.PermissaoSistema : TipoPermissaoSistema.NinguemImportante;
+            usuario.PermissaoSistema = usuarioExiste ? userDb.PermissaoSistema : TipoPermissaoSistema.NinguemImportante;
         }
 
         if (!usuarioExiste)
@@ -44,7 +44,7 @@ public class TokenService : ITokenService
             Subject = new ClaimsIdentity(new Claim[]
             {
                 new Claim(ClaimTypes.Name, usuario.Username),
-                new Claim(ClaimTypes.Role, (usuario.PermissaoSistema).ToString()),
+                new Claim(ClaimTypes.Role, usuario.PermissaoSistema.ToString()),
             }),
 
             Expires = DateTime.UtcNow.AddHours(8),
