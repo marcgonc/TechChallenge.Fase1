@@ -17,7 +17,7 @@ public class ListaMemoriaMiddleware
         ListaUsuario.Usuarios = new List<Usuario>();
         ListaUsuario.Usuarios.Add(new Usuario { Id = 1, Username = "teste", Password = "123", PermissaoSistema = TipoPermissaoSistema.Administrador });
         ListaUsuario.Usuarios.Add(new Usuario { Id = 2, Username = "marcioteste", Password = "123", PermissaoSistema = TipoPermissaoSistema.Administrador });
-        ListaUsuario.Usuarios.Add(new Usuario { Id = 2, Username = "thiagopecador", Password = "123", PermissaoSistema = TipoPermissaoSistema.Administrador });
+        ListaUsuario.Usuarios.Add(new Usuario { Id = 2, Username = "thiagoomelhor", Password = "123", PermissaoSistema = TipoPermissaoSistema.Administrador });
 
         return _next(httpContext);
     }
